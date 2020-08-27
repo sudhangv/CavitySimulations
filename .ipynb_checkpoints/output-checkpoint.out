@@ -1,0 +1,59 @@
+Using MPI version 3.1, 6 processes
+/home/quintsim2/Simulation/NewCavityDesign/2020/07/2020-07-27_a_tapered_cavity
+-----------
+Initializing structure...
+Halving computational cell along direction x
+Halving computational cell along direction y
+Halving computational cell along direction z
+Splitting into 6 chunks evenly
+time for choose_chunkdivision = 0.00627303 s
+Working in 3D dimensions.
+Computational cell is 20 x 8 x 8 with resolution 30
+     block, center = (0,0,0)
+          size (1e+20,0.7,0.22)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (11.9025,11.9025,11.9025)
+     ellipsoid, center = (0.195,0,0)
+          size (0.3,0.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-0.195,0,0)
+          size (0.3,0.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (0.585126,0,0)
+          size (0.3,0.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-0.585126,0,0)
+          size (0.3,0.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (0.975461,0,0)
+          size (0.3,0.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-0.975461,0,0)
+          size (0.3,0.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (1.36621,0,0)
+          size (0.3,0.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-1.36621,0,0)
+          size (0.3,0.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (1.75783,0,0)
+          size (0.3,0.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ...(+ 31 objects not shown)...
+time for set_epsilon = 2.82471 s
+-----------
+on time step 1 (time=0.0166667), 7.55175 s/step
+on time step 55 (time=0.916667), 0.0747709 s/step
+on time step 109 (time=1.81667), 0.0749189 s/step
+on time step 162 (time=2.7), 0.0757026 s/step
+on time step 215 (time=3.58333), 0.0755671 s/step

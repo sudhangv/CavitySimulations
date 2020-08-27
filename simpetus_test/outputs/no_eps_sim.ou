@@ -1,0 +1,363 @@
+Padding y to even number of grid points.
+Padding z to even number of grid points.
+Halving computational cell along direction x
+Halving computational cell along direction y
+Halving computational cell along direction z
+Working in 3D dimensions.
+Computational cell is 10.6667 x 4.5 x 4.23333 with resolution 30
+     block, center = (0,0,0)
+          size (1e+20,0.5,0.22)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (11.9025,11.9025,11.9025)
+     cylinder, center = (-5.1254,0,0)
+          radius 0.1204, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (5.1254,0,0)
+          radius 0.1204, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (-4.6954,0,0)
+          radius 0.1204, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (4.6954,0,0)
+          radius 0.1204, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (-4.2654,0,0)
+          radius 0.1204, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (4.2654,0,0)
+          radius 0.1204, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (-3.8354,0,0)
+          radius 0.1204, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (3.8354,0,0)
+          radius 0.1204, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (-3.4054,0,0)
+          radius 0.1204, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (3.4054,0,0)
+          radius 0.1204, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (-2.9754,0,0)
+          radius 0.1204, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (2.9754,0,0)
+          radius 0.1204, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (-2.5454,0,0)
+          radius 0.1204, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (2.5454,0,0)
+          radius 0.1204, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (-2.1154,0,0)
+          radius 0.1204, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (2.1154,0,0)
+          radius 0.1204, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (-1.6854,0,0)
+          radius 0.1204, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (1.6854,0,0)
+          radius 0.1204, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (-1.2679,0,0)
+          radius 0.1134, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (1.2679,0,0)
+          radius 0.1134, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (-0.8754,0,0)
+          radius 0.1064, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (0.8754,0,0)
+          radius 0.1064, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (-0.5079,0,0)
+          radius 0.0994, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (0.5079,0,0)
+          radius 0.0994, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (-0.1654,0,0)
+          radius 0.0924, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (0.1654,0,0)
+          radius 0.0924, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+time for set_epsilon = 0.311046 s
+-----------
+on time step 113 (time=1.88333), 0.0354033 s/step
+on time step 408 (time=6.8), 0.0136018 s/step
+on time step 702 (time=11.7), 0.0136512 s/step
+on time step 995 (time=16.5833), 0.0136522 s/step
+on time step 1288 (time=21.4667), 0.0136608 s/step
+on time step 1581 (time=26.35), 0.0136555 s/step
+on time step 1874 (time=31.2333), 0.0136564 s/step
+on time step 2167 (time=36.1167), 0.0136539 s/step
+on time step 2460 (time=41), 0.0136576 s/step
+on time step 2754 (time=45.9), 0.0136469 s/step
+on time step 3048 (time=50.8), 0.0136385 s/step
+on time step 3342 (time=55.7), 0.0136413 s/step
+on time step 3636 (time=60.6), 0.01364 s/step
+on time step 3930 (time=65.5), 0.0136311 s/step
+on time step 4224 (time=70.4), 0.0136322 s/step
+on time step 4518 (time=75.3), 0.013632 s/step
+on time step 4812 (time=80.2), 0.0136209 s/step
+on time step 5106 (time=85.1), 0.0136262 s/step
+on time step 5400 (time=90), 0.0136347 s/step
+on time step 5694 (time=94.9), 0.0136296 s/step
+on time step 5988 (time=99.8), 0.0136338 s/step
+on time step 6282 (time=104.7), 0.0136287 s/step
+on time step 6576 (time=109.6), 0.0136347 s/step
+on time step 6870 (time=114.5), 0.0136413 s/step
+on time step 7144 (time=119.067), 0.0146019 s/step
+on time step 7434 (time=123.9), 0.0138241 s/step
+on time step 7726 (time=128.767), 0.0137006 s/step
+on time step 8018 (time=133.633), 0.0137006 s/step
+on time step 8310 (time=138.5), 0.0137031 s/step
+on time step 8602 (time=143.367), 0.0137273 s/step
+on time step 8894 (time=148.233), 0.0137309 s/step
+on time step 9186 (time=153.1), 0.0137019 s/step
+on time step 9478 (time=157.967), 0.0136987 s/step
+on time step 9770 (time=162.833), 0.0137044 s/step
+on time step 10062 (time=167.7), 0.013704 s/step
+on time step 10354 (time=172.567), 0.0137017 s/step
+on time step 10646 (time=177.433), 0.0137038 s/step
+on time step 10938 (time=182.3), 0.0137078 s/step
+on time step 11230 (time=187.167), 0.0137218 s/step
+on time step 11522 (time=192.033), 0.0137022 s/step
+on time step 11814 (time=196.9), 0.0137066 s/step
+on time step 12106 (time=201.767), 0.0137036 s/step
+on time step 12398 (time=206.633), 0.0137159 s/step
+on time step 12691 (time=211.517), 0.0136982 s/step
+on time step 12983 (time=216.383), 0.0136994 s/step
+on time step 13276 (time=221.267), 0.0136957 s/step
+on time step 13568 (time=226.133), 0.0137036 s/step
+on time step 13861 (time=231.017), 0.0136981 s/step
+on time step 14153 (time=235.883), 0.0137017 s/step
+on time step 14445 (time=240.75), 0.013713 s/step
+on time step 14737 (time=245.617), 0.0137036 s/step
+on time step 15029 (time=250.483), 0.0137016 s/step
+on time step 15321 (time=255.35), 0.0137156 s/step
+on time step 15613 (time=260.217), 0.0137093 s/step
+on time step 15906 (time=265.1), 0.0136962 s/step
+on time step 16175 (time=269.583), 0.0148808 s/step
+on time step 16466 (time=274.433), 0.0137671 s/step
+on time step 16758 (time=279.3), 0.0137087 s/step
+on time step 17050 (time=284.167), 0.0137055 s/step
+on time step 17342 (time=289.033), 0.0137065 s/step
+on time step 17634 (time=293.9), 0.0137178 s/step
+on time step 17926 (time=298.767), 0.0137052 s/step
+on time step 18218 (time=303.633), 0.0137101 s/step
+on time step 18510 (time=308.5), 0.0137017 s/step
+on time step 18802 (time=313.367), 0.0137024 s/step
+on time step 19094 (time=318.233), 0.0137027 s/step
+on time step 19387 (time=323.117), 0.0136971 s/step
+on time step 19679 (time=327.983), 0.0137169 s/step
+on time step 19971 (time=332.85), 0.0137047 s/step
+on time step 20263 (time=337.717), 0.0137067 s/step
+on time step 20555 (time=342.583), 0.0137053 s/step
+on time step 20847 (time=347.45), 0.0137108 s/step
+on time step 21139 (time=352.317), 0.0137153 s/step
+on time step 21431 (time=357.183), 0.0137038 s/step
+on time step 21723 (time=362.05), 0.0137082 s/step
+on time step 22015 (time=366.917), 0.0137071 s/step
+on time step 22308 (time=371.8), 0.0137012 s/step
+on time step 22601 (time=376.683), 0.0136991 s/step
+on time step 22894 (time=381.567), 0.0136954 s/step
+on time step 23186 (time=386.433), 0.0137035 s/step
+on time step 23478 (time=391.3), 0.013703 s/step
+on time step 23770 (time=396.167), 0.0137027 s/step
+on time step 24062 (time=401.033), 0.0137114 s/step
+on time step 24353 (time=405.883), 0.0137719 s/step
+on time step 24644 (time=410.733), 0.013794 s/step
+on time step 24934 (time=415.567), 0.0137951 s/step
+on time step 25206 (time=420.1), 0.0147579 s/step
+on time step 25494 (time=424.9), 0.0139143 s/step
+on time step 25785 (time=429.75), 0.0137862 s/step
+on time step 26075 (time=434.583), 0.0137951 s/step
+on time step 26365 (time=439.417), 0.0137934 s/step
+on time step 26656 (time=444.267), 0.0137884 s/step
+on time step 26946 (time=449.1), 0.0137955 s/step
+on time step 27236 (time=453.933), 0.0137973 s/step
+on time step 27527 (time=458.783), 0.01379 s/step
+on time step 27817 (time=463.617), 0.0137935 s/step
+on time step 28108 (time=468.467), 0.013789 s/step
+Using MPI version 3.1, 8 processes
+-----------
+Initializing structure...
+Meep progress: 1.8833333333333333/621.1800003051758 = 0.3% done in 4.0s, 1315.5s to go
+Meep progress: 6.8/621.1800003051758 = 1.1% done in 8.0s, 724.0s to go
+Meep progress: 11.7/621.1800003051758 = 1.9% done in 12.0s, 626.5s to go
+Meep progress: 16.583333333333332/621.1800003051758 = 2.7% done in 16.0s, 584.3s to go
+Meep progress: 21.466666666666665/621.1800003051758 = 3.5% done in 20.0s, 559.6s to go
+Meep progress: 26.349999999999998/621.1800003051758 = 4.2% done in 24.0s, 542.5s to go
+Meep progress: 31.233333333333334/621.1800003051758 = 5.0% done in 28.0s, 529.5s to go
+Meep progress: 36.11666666666667/621.1800003051758 = 5.8% done in 32.0s, 518.9s to go
+Meep progress: 41.0/621.1800003051758 = 6.6% done in 36.0s, 509.9s to go
+Meep progress: 45.9/621.1800003051758 = 7.4% done in 40.0s, 501.9s to go
+Meep progress: 50.8/621.1800003051758 = 8.2% done in 44.1s, 494.7s to go
+Meep progress: 55.699999999999996/621.1800003051758 = 9.0% done in 48.1s, 488.0s to go
+Meep progress: 60.6/621.1800003051758 = 9.8% done in 52.1s, 481.7s to go
+Meep progress: 65.5/621.1800003051758 = 10.5% done in 56.1s, 475.8s to go
+Meep progress: 70.4/621.1800003051758 = 11.3% done in 60.1s, 470.1s to go
+Meep progress: 75.3/621.1800003051758 = 12.1% done in 64.1s, 464.7s to go
+Meep progress: 80.2/621.1800003051758 = 12.9% done in 68.1s, 459.4s to go
+Meep progress: 85.1/621.1800003051758 = 13.7% done in 72.1s, 454.3s to go
+Meep progress: 90.0/621.1800003051758 = 14.5% done in 76.1s, 449.3s to go
+Meep progress: 94.9/621.1800003051758 = 15.3% done in 80.1s, 444.4s to go
+Meep progress: 99.8/621.1800003051758 = 16.1% done in 84.1s, 439.5s to go
+Meep progress: 104.7/621.1800003051758 = 16.9% done in 88.1s, 434.8s to go
+Meep progress: 109.6/621.1800003051758 = 17.6% done in 92.2s, 430.1s to go
+Meep progress: 114.5/621.1800003051758 = 18.4% done in 96.2s, 425.5s to go
+Meep progress: 119.06666666666666/621.1800003051758 = 19.2% done in 100.2s, 422.4s to go
+Meep progress: 123.89999999999999/621.1800003051758 = 19.9% done in 104.2s, 418.1s to go
+Meep progress: 128.76666666666665/621.1800003051758 = 20.7% done in 108.2s, 413.7s to go
+Meep progress: 133.63333333333333/621.1800003051758 = 21.5% done in 112.2s, 409.2s to go
+Meep progress: 138.5/621.1800003051758 = 22.3% done in 116.2s, 404.9s to go
+Meep progress: 143.36666666666667/621.1800003051758 = 23.1% done in 120.2s, 400.5s to go
+Meep progress: 148.23333333333332/621.1800003051758 = 23.9% done in 124.2s, 396.2s to go
+Meep progress: 153.1/621.1800003051758 = 24.6% done in 128.2s, 391.9s to go
+Meep progress: 157.96666666666667/621.1800003051758 = 25.4% done in 132.2s, 387.6s to go
+Meep progress: 162.83333333333334/621.1800003051758 = 26.2% done in 136.2s, 383.4s to go
+Meep progress: 167.7/621.1800003051758 = 27.0% done in 140.2s, 379.1s to go
+Meep progress: 172.56666666666666/621.1800003051758 = 27.8% done in 144.2s, 374.9s to go
+Meep progress: 177.43333333333334/621.1800003051758 = 28.6% done in 148.2s, 370.6s to go
+Meep progress: 182.3/621.1800003051758 = 29.3% done in 152.2s, 366.4s to go
+Meep progress: 187.16666666666666/621.1800003051758 = 30.1% done in 156.2s, 362.2s to go
+Meep progress: 192.03333333333333/621.1800003051758 = 30.9% done in 160.2s, 358.0s to go
+Meep progress: 196.9/621.1800003051758 = 31.7% done in 164.2s, 353.8s to go
+Meep progress: 201.76666666666665/621.1800003051758 = 32.5% done in 168.2s, 349.7s to go
+Meep progress: 206.63333333333333/621.1800003051758 = 33.3% done in 172.2s, 345.5s to go
+Meep progress: 211.51666666666665/621.1800003051758 = 34.1% done in 176.2s, 341.3s to go
+Meep progress: 216.38333333333333/621.1800003051758 = 34.8% done in 180.2s, 337.2s to go
+Meep progress: 221.26666666666665/621.1800003051758 = 35.6% done in 184.2s, 333.0s to go
+Meep progress: 226.13333333333333/621.1800003051758 = 36.4% done in 188.2s, 328.9s to go
+Meep progress: 231.01666666666665/621.1800003051758 = 37.2% done in 192.3s, 324.7s to go
+Meep progress: 235.88333333333333/621.1800003051758 = 38.0% done in 196.3s, 320.6s to go
+Meep progress: 240.75/621.1800003051758 = 38.8% done in 200.3s, 316.5s to go
+Meep progress: 245.61666666666667/621.1800003051758 = 39.5% done in 204.3s, 312.3s to go
+Meep progress: 250.48333333333332/621.1800003051758 = 40.3% done in 208.3s, 308.2s to go
+Meep progress: 255.35/621.1800003051758 = 41.1% done in 212.3s, 304.1s to go
+Meep progress: 260.21666666666664/621.1800003051758 = 41.9% done in 216.3s, 300.0s to go
+Meep progress: 265.1/621.1800003051758 = 42.7% done in 220.3s, 295.9s to go
+Meep progress: 269.5833333333333/621.1800003051758 = 43.4% done in 224.3s, 292.5s to go
+Meep progress: 274.43333333333334/621.1800003051758 = 44.2% done in 228.3s, 288.5s to go
+Meep progress: 279.3/621.1800003051758 = 45.0% done in 232.3s, 284.3s to go
+Meep progress: 284.1666666666667/621.1800003051758 = 45.7% done in 236.3s, 280.2s to go
+Meep progress: 289.0333333333333/621.1800003051758 = 46.5% done in 240.3s, 276.1s to go
+Meep progress: 293.9/621.1800003051758 = 47.3% done in 244.3s, 272.1s to go
+Meep progress: 298.76666666666665/621.1800003051758 = 48.1% done in 248.3s, 268.0s to go
+Meep progress: 303.6333333333333/621.1800003051758 = 48.9% done in 252.3s, 263.9s to go
+Meep progress: 308.5/621.1800003051758 = 49.7% done in 256.3s, 259.8s to go
+Meep progress: 313.3666666666667/621.1800003051758 = 50.4% done in 260.3s, 255.7s to go
+Meep progress: 318.23333333333335/621.1800003051758 = 51.2% done in 264.3s, 251.6s to go
+Meep progress: 323.1166666666667/621.1800003051758 = 52.0% done in 268.3s, 247.5s to go
+Meep progress: 327.98333333333335/621.1800003051758 = 52.8% done in 272.3s, 243.5s to go
+Meep progress: 332.85/621.1800003051758 = 53.6% done in 276.3s, 239.4s to go
+Meep progress: 337.71666666666664/621.1800003051758 = 54.4% done in 280.3s, 235.3s to go
+Meep progress: 342.5833333333333/621.1800003051758 = 55.2% done in 284.3s, 231.2s to go
+Meep progress: 347.45/621.1800003051758 = 55.9% done in 288.3s, 227.2s to go
+Meep progress: 352.31666666666666/621.1800003051758 = 56.7% done in 292.4s, 223.1s to go
+Meep progress: 357.18333333333334/621.1800003051758 = 57.5% done in 296.4s, 219.0s to go
+Meep progress: 362.05/621.1800003051758 = 58.3% done in 300.4s, 215.0s to go
+Meep progress: 366.9166666666667/621.1800003051758 = 59.1% done in 304.4s, 210.9s to go
+Meep progress: 371.8/621.1800003051758 = 59.9% done in 308.4s, 206.8s to go
+Meep progress: 376.68333333333334/621.1800003051758 = 60.6% done in 312.4s, 202.8s to go
+Meep progress: 381.56666666666666/621.1800003051758 = 61.4% done in 316.4s, 198.7s to go
+Meep progress: 386.43333333333334/621.1800003051758 = 62.2% done in 320.4s, 194.6s to go
+Meep progress: 391.3/621.1800003051758 = 63.0% done in 324.4s, 190.6s to go
+Meep progress: 396.1666666666667/621.1800003051758 = 63.8% done in 328.4s, 186.5s to go
+Meep progress: 401.0333333333333/621.1800003051758 = 64.6% done in 332.4s, 182.5s to go
+Meep progress: 405.8833333333333/621.1800003051758 = 65.3% done in 336.4s, 178.4s to go
+Meep progress: 410.73333333333335/621.1800003051758 = 66.1% done in 340.4s, 174.4s to go
+Meep progress: 415.56666666666666/621.1800003051758 = 66.9% done in 344.4s, 170.4s to go
+Meep progress: 420.09999999999997/621.1800003051758 = 67.6% done in 348.4s, 166.8s to go
+Meep progress: 424.9/621.1800003051758 = 68.4% done in 352.5s, 162.8s to go
+Meep progress: 429.75/621.1800003051758 = 69.2% done in 356.5s, 158.8s to go
+Meep progress: 434.5833333333333/621.1800003051758 = 70.0% done in 360.5s, 154.8s to go
+Meep progress: 439.4166666666667/621.1800003051758 = 70.7% done in 364.5s, 150.8s to go
+Meep progress: 444.26666666666665/621.1800003051758 = 71.5% done in 368.5s, 146.7s to go
+Meep progress: 449.09999999999997/621.1800003051758 = 72.3% done in 372.5s, 142.7s to go
+Meep progress: 453.93333333333334/621.1800003051758 = 73.1% done in 376.5s, 138.7s to go
+Meep progress: 458.7833333333333/621.1800003051758 = 73.9% done in 380.5s, 134.7s to go
+Meep progress: 463.6166666666667/621.1800003051758 = 74.6% done in 384.5s, 130.7s to go
+Meep progress: 468.46666666666664/621.1800003051758 = 75.4% done in 388.5s, 126.6s to go
+Meep progress: 473.3/621.1800003051758 = 76.2% done in 392.5s, 122.6s to goon time step 28398 (time=473.3), 0.0137957 s/step
+on time step 28688 (time=478.133), 0.013801 s/step
+on time step 28978 (time=482.967), 0.0137938 s/step
+on time step 29269 (time=487.817), 0.01379 s/step
+on time step 29559 (time=492.65), 0.0137958 s/step
+on time step 29850 (time=497.5), 0.0137902 s/step
+on time step 30141 (time=502.35), 0.0137884 s/step
+on time step 30432 (time=507.2), 0.0137916 s/step
+on time step 30723 (time=512.05), 0.0137902 s/step
+on time step 31014 (time=516.9), 0.013792 s/step
+on time step 31304 (time=521.733), 0.013796 s/step
+on time step 31595 (time=526.583), 0.0137886 s/step
+on time step 31886 (time=531.433), 0.0137925 s/step
+on time step 32177 (time=536.283), 0.0137893 s/step
+on time step 32468 (time=541.133), 0.0137883 s/step
+on time step 32758 (time=545.967), 0.0138011 s/step
+on time step 33048 (time=550.8), 0.0138028 s/step
+on time step 33339 (time=555.65), 0.0137936 s/step
+on time step 33629 (time=560.483), 0.0137978 s/step
+on time step 33920 (time=565.333), 0.0137935 s/step
+on time step 34192 (time=569.867), 0.0147504 s/step
+on time step 34480 (time=574.667), 0.0139321 s/step
+on time step 34770 (time=579.5), 0.0137987 s/step
+on time step 35061 (time=584.35), 0.0137906 s/step
+on time step 35352 (time=589.2), 0.0137915 s/step
+on time step 35642 (time=594.033), 0.0137968 s/step
+on time step 35932 (time=598.867), 0.0137981 s/step
+on time step 36222 (time=603.7), 0.0137968 s/step
+on time step 36512 (time=608.533), 0.0137948 s/step
+on time step 36803 (time=613.383), 0.013785 s/step
+on time step 37093 (time=618.217), 0.0138017 s/step
+
+Field time usage:
+     connecting chunks: 1.22323 s
+         time stepping: 419.115 s
+         communicating: 82.0694 s
+    Fourier transforming: 0.0190556 s
+       everything else: 13.5615 s
+
+
+Meep progress: 478.1333333333333/621.1800003051758 = 77.0% done in 396.5s, 118.6s to go
+Meep progress: 482.96666666666664/621.1800003051758 = 77.7% done in 400.5s, 114.6s to go
+Meep progress: 487.81666666666666/621.1800003051758 = 78.5% done in 404.5s, 110.6s to go
+Meep progress: 492.65/621.1800003051758 = 79.3% done in 408.5s, 106.6s to go
+Meep progress: 497.5/621.1800003051758 = 80.1% done in 412.5s, 102.6s to go
+Meep progress: 502.34999999999997/621.1800003051758 = 80.9% done in 416.5s, 98.5s to go
+Meep progress: 507.2/621.1800003051758 = 81.7% done in 420.6s, 94.5s to go
+Meep progress: 512.05/621.1800003051758 = 82.4% done in 424.6s, 90.5s to go
+Meep progress: 516.9/621.1800003051758 = 83.2% done in 428.6s, 86.5s to go
+Meep progress: 521.7333333333333/621.1800003051758 = 84.0% done in 432.6s, 82.5s to go
+Meep progress: 526.5833333333334/621.1800003051758 = 84.8% done in 436.6s, 78.4s to go
+Meep progress: 531.4333333333333/621.1800003051758 = 85.6% done in 440.6s, 74.4s to go
+Meep progress: 536.2833333333333/621.1800003051758 = 86.3% done in 444.6s, 70.4s to go
+Meep progress: 541.1333333333333/621.1800003051758 = 87.1% done in 448.6s, 66.4s to go
+Meep progress: 545.9666666666667/621.1800003051758 = 87.9% done in 452.6s, 62.4s to go
+Meep progress: 550.8/621.1800003051758 = 88.7% done in 456.6s, 58.3s to go
+Meep progress: 555.65/621.1800003051758 = 89.5% done in 460.7s, 54.3s to go
+Meep progress: 560.4833333333333/621.1800003051758 = 90.2% done in 464.7s, 50.3s to go
+Meep progress: 565.3166666666666/621.1800003051758 = 91.0% done in 468.7s, 46.3s to go
+Meep progress: 569.85/621.1800003051758 = 91.7% done in 472.7s, 42.6s to go
+Meep progress: 574.65/621.1800003051758 = 92.5% done in 476.7s, 38.6s to go
+Meep progress: 579.4833333333333/621.1800003051758 = 93.3% done in 480.7s, 34.6s to go
+Meep progress: 584.3333333333334/621.1800003051758 = 94.1% done in 484.7s, 30.6s to go
+Meep progress: 589.1833333333333/621.1800003051758 = 94.8% done in 488.7s, 26.5s to go
+Meep progress: 594.0166666666667/621.1800003051758 = 95.6% done in 492.7s, 22.5s to go
+Meep progress: 598.85/621.1800003051758 = 96.4% done in 496.7s, 18.5s to go
+Meep progress: 603.6833333333333/621.1800003051758 = 97.2% done in 500.7s, 14.5s to go
+Meep progress: 608.5166666666667/621.1800003051758 = 98.0% done in 504.7s, 10.5s to go
+Meep progress: 613.3666666666667/621.1800003051758 = 98.7% done in 508.7s, 6.5s to go
+Meep progress: 618.2/621.1800003051758 = 99.5% done in 512.7s, 2.5s to go
+harminv0:, frequency, imag. freq., Q, |amp|, amplitude, error
+harminv0:, 0.6440121727608079, -2.2056345364892906e-07, 1459924.9379407214, 21.630152316612598, -21.28945371267681-3.8239573553653665i, 1.779568357650579e-12+0.0i
+run 0 finished at t = 621.1833333333333 (37271 timesteps)
+
+Elapsed run time = 516.8534 s

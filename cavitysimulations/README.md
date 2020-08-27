@@ -1,0 +1,1 @@
+A new repository for photonic crystal cavity simulations. A python-only approach overcoming the limiations of bash is followed whenever possible. 

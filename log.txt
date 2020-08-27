@@ -1,0 +1,30 @@
+27th August
+id - 19  --- After nice result from 0.295 by setting source component = mp.Ey, changing it to 0.303
+
+Added poly_tapering, changed f = 1/1536 --> 1/1.54
+
+changed a_taperred --> a_poly_tapered
+
+id - 21
+
+Ran OG polynomial tapering witg a_cen = 0.349, a_end = 0.4, hx = hy = 0.25
+
+id - 23  POLY
+
+Changed wavg h to 0.22 and wvg w to 0.7,  hx = 0.25, hy = 0.4, w = 0.7, a_cen = 0.354, a_mirror = 0.4
+
+id 27  POLY
+
+same as id 23, just changed n_segments = 20
+
+id 28
+
+hx = 0.3, hy = 0.5, a = 0.449, w = 0.7, gamma = 0.1697
+
+id 31  POLY
+
+Same as ID 28, resolution : 30 ---> 40
+
+id 32
+
+Same as id 31, n_taper ---> 5, n_segment -----> 10
