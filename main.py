@@ -28,7 +28,7 @@ def main():
     
     symmetries = [mp.Mirror(mp.X,+1), mp.Mirror(mp.Y,-1), mp.Mirror(mp.Z,+1)]
     
-    sim = mp.Simulation(resolution = 40, 
+    sim = mp.Simulation(resolution = 30, 
                         cell_size=mp.Vector3(20, 8, 8), 
                         geometry=geom, 
                         boundary_layers=boundary_layers, 
