@@ -12,8 +12,8 @@ def _a_poly_tapering(geom=None, n_segments=20, material_holes=mp.vacuum):
     if geom is None:
          geom = []
     material_holes = index_to_material(material_holes)
-    _cavity = OneDLattice(Lx = 10)
-    _n_taper = 5
+    _cavity = OneDLattice(Lx = 20)
+    _n_taper = 20
     _cavity.polynomial_elliptical_hole_taper(_n_taper, 0.3, 0.5, 0.7, 0.39, 0.449 )
     _cavity.apply_poly_spacing()
     #print(_cavity.coordinates)
