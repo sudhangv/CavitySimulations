@@ -13,8 +13,8 @@ def _a_poly_tapering(geom=None, n_segments=20, material_holes=mp.vacuum):
          geom = []
     material_holes = index_to_material(material_holes)
     _cavity = OneDLattice(Lx = 20)
-    _n_taper = 20
-    _cavity.polynomial_elliptical_hole_taper(_n_taper, 0.3, 0.5, 0.7, 0.39, 0.449 )
+    _n_taper = 10
+    _cavity.polynomial_elliptical_hole_taper(_n_taper, 0.3, 0.425, 0.65, 0.39, 0.449 )
     _cavity.apply_poly_spacing()
     #print(_cavity.coordinates)
     # cavity holes
@@ -44,8 +44,8 @@ def _a_pow_tapering(geom=None, n_segments=20, material_holes=mp.vacuum):
                                hx = 0.143, 
                                hy = 0.315, 
                                w = 0.65, 
-                               a_center = 0.303,
-                               a_mirror = 0.34,
+                               a_center = 0.316,
+                               a_mirror = 0.361,
                                pow = 2)
     _cavity.apply_pow_spacing()
     #print(_cavity.coordinates)

@@ -1,0 +1,253 @@
+Halving computational cell along direction x
+Halving computational cell along direction y
+Halving computational cell along direction z
+Working in 3D dimensions.
+Computational cell is 20 x 8 x 8 with resolution 30
+     block, center = (0,0,0)
+          size (1e+20,0.65,0.22)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (11.9025,11.9025,11.9025)
+     ellipsoid, center = (0.158,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-0.158,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (0.474278,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-0.474278,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (0.791667,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-0.791667,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (1.11128,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-1.11128,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (1.43422,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-1.43422,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (1.76161,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-1.76161,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (2.09456,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-2.09456,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (2.43417,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-2.43417,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (2.78156,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-2.78156,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (3.13783,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-3.13783,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (3.49883,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-3.49883,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (3.85983,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-3.85983,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (4.22083,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-4.22083,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (4.58183,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-4.58183,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (4.94283,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-4.94283,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (5.30383,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-5.30383,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (5.66483,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-5.66483,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (6.02583,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-6.02583,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (6.38683,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-6.38683,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (6.74783,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     ellipsoid, center = (-6.74783,0,0)
+          size (0.143,0.315,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+time for set_epsilon = 3.81529 s
+-----------
+on time step 1 (time=0.0166667), 9.23769 s/step
+on time step 58 (time=0.966667), 0.0702095 s/step
+on time step 115 (time=1.91667), 0.0701879 s/step
+on time step 172 (time=2.86667), 0.0703526 s/step
+on time step 229 (time=3.81667), 0.0706443 s/step
+on time step 286 (time=4.76667), 0.0709783 s/step
+on time step 343 (time=5.71667), 0.0713503 s/step
+on time step 399 (time=6.65), 0.0716929 s/step
+on time step 455 (time=7.58333), 0.0718348 s/step
+on time step 511 (time=8.51667), 0.0718692 s/step
+on time step 567 (time=9.45), 0.0719188 s/step
+on time step 623 (time=10.3833), 0.0719034 s/step
+on time step 679 (time=11.3167), 0.0718901 s/step
+on time step 735 (time=12.25), 0.0719734 s/step
+on time step 791 (time=13.1833), 0.0719146 s/step
+on time step 847 (time=14.1167), 0.0719061 s/step
+on time step 903 (time=15.05), 0.0719045 s/step
+on time step 959 (time=15.9833), 0.0719127 s/step
+on time step 1015 (time=16.9167), 0.0719156 s/step
+on time step 1071 (time=17.85), 0.0719175 s/step
+on time step 1127 (time=18.7833), 0.0719181 s/step
+on time step 1183 (time=19.7167), 0.0719106 s/step
+on time step 1238 (time=20.6333), 0.0738326 s/step
+on time step 1290 (time=21.5), 0.0782104 s/step
+on time step 1345 (time=22.4167), 0.0733296 s/step
+on time step 1401 (time=23.35), 0.0719441 s/step
+on time step 1457 (time=24.2833), 0.0719413 s/step
+on time step 1513 (time=25.2167), 0.0719157 s/step
+on time step 1569 (time=26.15), 0.0719552 s/step
+on time step 1625 (time=27.0833), 0.0719513 s/step
+on time step 1681 (time=28.0167), 0.0719101 s/step
+on time step 1737 (time=28.95), 0.071949 s/step
+on time step 1793 (time=29.8833), 0.0719302 s/step
+on time step 1849 (time=30.8167), 0.071974 s/step
+on time step 1905 (time=31.75), 0.0719379 s/step
+on time step 1961 (time=32.6833), 0.0719536 s/step
+on time step 2017 (time=33.6167), 0.0719633 s/step
+on time step 2073 (time=34.55), 0.071985 s/step
+on time step 2129 (time=35.4833), 0.07193 s/step
+on time step 2185 (time=36.4167), 0.0719468 s/step
+on time step 2241 (time=37.35), 0.0719598 s/step
+on time step 2297 (time=38.2833), 0.0719254 s/step
+on time step 2353 (time=39.2167), 0.0719817 s/step
+on time step 2409 (time=40.15), 0.0719563 s/step
+on time step 2465 (time=41.0833), 0.0719852 s/step
+on time step 2521 (time=42.0167), 0.0719519 s/step
+on time step 2577 (time=42.95), 0.07193 s/step
+on time step 2633 (time=43.8833), 0.0719512 s/step
+on time step 2689 (time=44.8167), 0.0719806 s/step
+on time step 2745 (time=45.75), 0.0719672 s/step
+on time step 2801 (time=46.6833), 0.0719367 s/step
+on time step 2857 (time=47.6167), 0.0719727 s/step
+on time step 2913 (time=48.55), 0.0720056 s/step
+on time step 2969 (time=49.4833), 0.0719732 s/step
+on time step 3022 (time=50.3667), 0.0765734 s/step
+on time step 3075 (time=51.25), 0.0765811 s/step
+on time step 3131 (time=52.1833), 0.0720261 s/step
+on time step 3187 (time=53.1167), 0.0720088 s/step
+on time step 3243 (time=54.05), 0.0720396 s/step
+on time step 3299 (time=54.9833), 0.0720128 s/step
+on time step 3355 (time=55.9167), 0.0720175 s/step
+on time step 3411 (time=56.85), 0.0720359 s/step
+on time step 3467 (time=57.7833), 0.0720338 s/step
+on time step 3523 (time=58.7167), 0.0720026 s/step
+on time step 3579 (time=59.65), 0.0720035 s/step
+on time step 3635 (time=60.5833), 0.0720654 s/step
+on time step 3691 (time=61.5167), 0.0720411 s/step
+on time step 3747 (time=62.45), 0.0721112 s/step
+on time step 3803 (time=63.3833), 0.0720424 s/step
+on time step 3859 (time=64.3167), 0.0720282 s/step
+on time step 3915 (time=65.25), 0.0720273 s/step
+on time step 3971 (time=66.1833), 0.0720226 s/step
+on time step 4027 (time=67.1167), 0.0720511 s/step
+on time step 4083 (time=68.05), 0.0724822 s/step
+on time step 4139 (time=68.9833), 0.072068 s/step
+on time step 4195 (time=69.9167), 0.0721947 s/step
+on time step 4251 (time=70.85), 0.0720767 s/step
+on time step 4307 (time=71.7833), 0.0720425 s/step
+on time step 4363 (time=72.7167), 0.0720393 s/step
+on time step 4419 (time=73.65), 0.0720428 s/step
+on time step 4475 (time=74.5833), 0.0720125 s/step
+on time step 4531 (time=75.5167), 0.0720144 s/step

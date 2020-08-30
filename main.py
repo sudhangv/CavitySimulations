@@ -16,7 +16,8 @@ from cavitysimulations.utilities.utilities import *
 
 
 def main():
-    geom = a_poly_tapered_cavity()
+    #geom = a_poly_tapered_cavity()
+    geom = a_pow_tapered_cavity()
     
     boundary_layers = get_boundary_layer(sim2d=False)
     
