@@ -12,11 +12,20 @@ def _a_poly_tapering(geom=None, n_segments=20, material_holes=mp.vacuum):
     if geom is None:
          geom = []
     material_holes = index_to_material(material_holes)
-    _cavity = OneDLattice(Lx = 20)
+    hx = 0.143
+    hy = 0.315
+    w = 0.65
+    a_cen = 0.313
+    a_mirror = 0.361
+    Lx = 20
+    _cavity = OneDLattice(Lx = Lx)
     _n_taper = 10
-    _cavity.polynomial_elliptical_hole_taper(_n_taper, 0.3, 0.425, 0.65, 0.39, 0.449 )
+    _cavity.polynomial_elliptical_hole_taper(_n_taper, hx, hy, w, a_cen, a_mirror )
     _cavity.apply_poly_spacing()
-    #print(_cavity.coordinates)
+    print("--------------------------------------------------------------------------------------------------------")
+    print(" Poly Tapering : hx = {}, hy = {}, w = {}, a_cen  = {},  a_mirror = {}, n_taper = {}, Lx = {}".format(hx, hy,w,a_cen,a_mirror,_n_taper,Lx))
+    print("--------------------------------------------------------------------------------------------------------")
+#print(_cavity.coordinates)
     # cavity holes
     for x, y, z, hx, hy in _cavity.coordinates:
         # holes are completely filled with tuning material:
@@ -37,18 +46,27 @@ def _a_pow_tapering(geom=None, n_segments=20, material_holes=mp.vacuum):
     if geom is None:
         geom = []
     material_holes = index_to_material(material_holes)
-
-    _cavity = OneDLattice(Lx = n_segments)
+    hx = 0.143
+    hy = 0.315                                                                                                              
+    w = 0.65
+    a_cen = 0.303
+    a_mirror = 0.346
+    Lx = 20
+    _cavity = OneDLattice(Lx = Lx)
     _n_taper = 10
     _cavity.pow_degree_a_taper(_n_taper, 
-                               hx = 0.143, 
-                               hy = 0.315, 
-                               w = 0.65, 
-                               a_center = 0.316,
-                               a_mirror = 0.361,
+                               hx = hx, 
+                               hy = hy, 
+                               w = w, 
+                               a_center = a_cen,
+                               a_mirror = a_mirror,
                                pow = 2)
+    
     _cavity.apply_pow_spacing()
-    #print(_cavity.coordinates)
+    print("--------------------------------------------------------------------------------------------------------")
+    print(" Pow Tapering : hx = {}, hy = {}, w = {}, a_cen  = {},  a_mirror = {}, n_taper = {}, Lx = {}".format(hx, hy, w, a_cen, a_mirror, _n_taper, Lx))    
+    print("--------------------------------------------------------------------------------------------------------") 
+#print(_cavity.coordinates)
     # cavity holes
     for x, y, z, hx, hy in _cavity.coordinates:
         # holes are completely filled with tuning material:

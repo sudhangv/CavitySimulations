@@ -50,3 +50,18 @@ id 36?
                                a_center = 0.316,
                                a_mirror = 0.361,
                                pow = 2)
+id 37
+------
+
+Same as id36? but with polynomial tapering
+
+id 39/0
+-------
+
+_cavity.pow_degree_a_taper(_n_taper,                                                                                                                  
+			    hx = 0.143,
+                               hy = 0.315,
+                               w = 0.65,
+                               a_center = 0.303,                                                                                                       
+                               a_mirror = 0.346,
+                               pow = 2)  

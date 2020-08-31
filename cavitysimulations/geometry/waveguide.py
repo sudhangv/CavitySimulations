@@ -4,7 +4,7 @@ import warnings
 from ..utilities.utilities import *
 
 
-def add_waveguide_1d(geom=None, wvg_width=.65, wvg_height=.22, center=mp.Vector3(0, 0, 0),
+def add_waveguide_1d(geom=None, wvg_width=.65, wvg_height=.25, center=mp.Vector3(0, 0, 0),
                      material=mp.Medium(index=3.45), d_tuning=0, material_tuning=mp.Medium(index=1.025)):
     """
     Creates a 1D waveguide.
