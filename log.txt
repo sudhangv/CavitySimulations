@@ -65,3 +65,8 @@ _cavity.pow_degree_a_taper(_n_taper,
                                a_center = 0.303,                                                                                                       
                                a_mirror = 0.346,
                                pow = 2)  
+
+id 40/1
+-------
+
+same as 39/0

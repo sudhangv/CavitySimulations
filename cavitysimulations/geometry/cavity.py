@@ -20,10 +20,11 @@ def _a_poly_tapering(geom=None, n_segments=20, material_holes=mp.vacuum):
     Lx = 20
     _cavity = OneDLattice(Lx = Lx)
     _n_taper = 10
+    h  = 0.25
     _cavity.polynomial_elliptical_hole_taper(_n_taper, hx, hy, w, a_cen, a_mirror )
     _cavity.apply_poly_spacing()
     print("--------------------------------------------------------------------------------------------------------")
-    print(" Poly Tapering : hx = {}, hy = {}, w = {}, a_cen  = {},  a_mirror = {}, n_taper = {}, Lx = {}".format(hx, hy,w,a_cen,a_mirror,_n_taper,Lx))
+    print(" Poly Tapering : hx = {}, hy = {}, w = {}, h= {}, a_cen  = {},  a_mirror = {}, n_taper = {}, Lx = {}".format(hx, hy,w, h, a_cen,a_mirror,_n_taper,Lx))
     print("--------------------------------------------------------------------------------------------------------")
 #print(_cavity.coordinates)
     # cavity holes
@@ -52,6 +53,7 @@ def _a_pow_tapering(geom=None, n_segments=20, material_holes=mp.vacuum):
     a_cen = 0.303
     a_mirror = 0.346
     Lx = 20
+    h = 0.25
     _cavity = OneDLattice(Lx = Lx)
     _n_taper = 10
     _cavity.pow_degree_a_taper(_n_taper, 
@@ -64,7 +66,7 @@ def _a_pow_tapering(geom=None, n_segments=20, material_holes=mp.vacuum):
     
     _cavity.apply_pow_spacing()
     print("--------------------------------------------------------------------------------------------------------")
-    print(" Pow Tapering : hx = {}, hy = {}, w = {}, a_cen  = {},  a_mirror = {}, n_taper = {}, Lx = {}".format(hx, hy, w, a_cen, a_mirror, _n_taper, Lx))    
+    print(" Pow Tapering : hx = {}, hy = {}, w = {}, h = {}, a_cen  = {},  a_mirror = {}, n_taper = {}, Lx = {}".format(hx, hy, w, h, a_cen, a_mirror, _n_taper, Lx))    
     print("--------------------------------------------------------------------------------------------------------") 
 #print(_cavity.coordinates)
     # cavity holes

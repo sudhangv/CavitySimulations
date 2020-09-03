@@ -19,11 +19,11 @@ def convert_freq_to_Thz(freq, a = 0):
     
 def get_freqs(hx , hy , a , w  ):
     
-    wz = 0.22
+    wz = 0.19
     res = 20
     mode = "zEyO"
     resolution = res  # pixels/a, taken from simpetus example
-    
+    print(" wz = " + str(wz))
 #     a = round(a,3)        # units of um
 #     h = round(wz, 3)         # units of um
 #     w = round(wy, 3)         # units of um
@@ -80,7 +80,7 @@ a_min = 0.25
 a_max = 0.45        # upper limit of the sweep of a 
 
 w_min = 0.65         #  lower limit of w 
-w_max = 0.7        #  upper limit of w 
+w_max = 0.75        #  upper limit of w 
 
 hx_min = 0.05        # lower limit of the sweep of a
 hy_min = 0.1        #  lower limit of hy 
@@ -95,7 +95,7 @@ f_target_Thz = convert_freq_to_Thz(f_target) * 1.01
 
 parameters = []
 
-with h5py.File('sweep_data.hdf5', 'w') as f:
+with h5py.File('sweep_data2.hdf5', 'w') as f:
     
 
     gamma_max = 0        # arbitrary small value
@@ -208,7 +208,7 @@ with h5py.File('sweep_data.hdf5', 'w') as f:
                             else:
                                 continue
                                 
-    with open("parameters.txt", "w") as file1: 
+    with open("parameters2.txt", "w") as file1: 
         for parameter in parameters:
     # Writing data to a file 
             file1.write("hx = {}, hy = {}, a = {}, w = {}, gamma = {}".format(*parameter)) 
