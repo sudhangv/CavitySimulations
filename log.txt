@@ -70,3 +70,9 @@ id 40/1
 -------
 
 same as 39/0
+
+Sept 3
+------
+
+Re ran the two sweeps for wz = 190 and 200 ( ag and quint sim respectively )
+will update log from one computer at a time. Current = quint sim 
