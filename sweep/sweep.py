@@ -19,7 +19,7 @@ def convert_freq_to_Thz(freq, a = 0):
     
 def get_freqs(hx , hy , a , w  ):
     
-    wz = 0.19
+    wz = 0.2
     res = 20
     mode = "zEyO"
     resolution = res  # pixels/a, taken from simpetus example
@@ -95,7 +95,7 @@ f_target_Thz = convert_freq_to_Thz(f_target) * 1.01
 
 parameters = []
 
-with h5py.File('sweep_data2.hdf5', 'w') as f:
+with h5py.File('sweep_data200.hdf5', 'w') as f:
     
 
     gamma_max = 0        # arbitrary small value
@@ -208,7 +208,7 @@ with h5py.File('sweep_data2.hdf5', 'w') as f:
                             else:
                                 continue
                                 
-    with open("parameters2.txt", "w") as file1: 
+    with open("parameters200.txt", "w") as file1: 
         for parameter in parameters:
     # Writing data to a file 
             file1.write("hx = {}, hy = {}, a = {}, w = {}, gamma = {}".format(*parameter)) 
