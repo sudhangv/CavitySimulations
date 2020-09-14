@@ -86,5 +86,6 @@ Sept 14
 -------- 
 @quintsim
 Updated data with wz 230 nm, pulled code to quint sim 
+
 @quitnsim
-Ran substrate simulation @ag, pushed sweep_util
+Ran substrate simulation  wz = 220 nm@ag, pushed sweep_util
