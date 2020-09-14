@@ -9,8 +9,8 @@ from math import sqrt, pi
 from sweep_util import *
 
 
-data_file = "check.hdf5"      # Name of the file where the data will be stored
-param_file = "param.txt"      # Name of the file where the parameters of interest will be stored     
+data_file = "sub_190.hdf5"      # Name of the file where the data will be stored
+param_file = "sub_param_190.txt"      # Name of the file where the parameters of interest will be stored     
 
 #-----------------DEFAULTS-----------------------#
 #     del_a = 0.001      
@@ -39,7 +39,7 @@ hx_max = a_max - 0.07
 hy_max = w_max - 0.1  
 #------------------ Geometry Characteristics ---------------------#
 
-wvg_height = 0.22
+wvg_height = 0.19
 
 SUBSTRATE = True
 
