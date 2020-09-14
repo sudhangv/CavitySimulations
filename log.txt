@@ -82,3 +82,9 @@ Sept 8
 
 Ran the sweeps for wz = 200 on ag, updated log on ag
 
+Sept 14
+-------- 
+@quintsim
+Updated data with wz 230 nm, pulled code to quint sim 
+@quitnsim
+Ran substrate simulation @ag, pushed sweep_util
