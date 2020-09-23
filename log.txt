@@ -92,3 +92,9 @@ Ran substrate simulation  wz = 220 nm@ag, pushed sweep_util
 
 @quintsim
 Ran substrate simulation wz = 190 nm@quinstim
+
+Sept 23
+-------
+@quintsim 
+Pushed results from @ag for wz = 220 nm substrate simulation and substrate simulation wz = 190
+
