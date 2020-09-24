@@ -11,7 +11,8 @@ from sweep_util import *
 
 data_file = "no_sub190.hdf5"      # Name of the file where the data will be stored
 param_file = "no_sub_param_190.txt"      # Name of the file where the parameters of interest will be stored     
-wvg_height = 0.19
+SUBSTRATE = False
+wvg_height = 0.22
 #-----------------DEFAULTS-----------------------#
 #     del_a = 0.001      
 #     del_hy = 0.025
@@ -41,7 +42,6 @@ hy_max = w_max - 0.1
 
 
 
-SUBSTRATE = False
 
 
 f_target = 1/1.54

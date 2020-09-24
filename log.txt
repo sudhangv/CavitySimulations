@@ -103,3 +103,5 @@ Sept 24
 @ag
 Started wz = 190 nm no_sub sim @ag, pushed new substrate_sweep.py and log 
 
+@quintsim2
+Started wz = 220 nm no_sub sim @quintsim, pushed new substrate_sweep.py and log
