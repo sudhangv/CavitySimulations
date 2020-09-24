@@ -41,3 +41,38 @@ def index_to_material(element):
         return element
     else:
         return mp.Medium(index=element)
+    
+def get_index(w, a, hy, hx):
+    
+        #------------- DEFAULTS -------------------------------------------#
+        #  del_w, del_a, del_hy, del_hx = 0.05, 0.001, 0.025, 0.025
+        #  w_max ,a_max = 0.7, 0.45
+        #  w_min, a_min, hy_min, hx_min = 0.65, 0.25, 0.1, 0.05
+        #------------------------------------------------------------------#
+        
+        del_w, del_a, del_hy, del_hx = 0.05, 0.001, 0.025, 0.025
+        w_max ,a_max = 0.7, 0.45
+        w_min, a_min, hy_min, hx_min = 0.65, 0.25, 0.1, 0.05
+        
+        index_a = int((a - a_min)/del_a + 0.1)
+        index_w = int((w - w_min) / del_w + 0.1)
+        index_hy = int((hy - hy_min) / del_hy + 0.1)
+        index_hx = int((hx - hx_min) / del_hx + 0.1)
+        
+        return index_w, index_a, index_hy, index_hx
+    
+def convert_freq_to_Thz(freq, a = 0):
+    '''
+    Converts a MEEP frequency ( units of 2pi*c/a or 1/lambda_air) to frequency (not angular velocity) in units of Thz
+    freq ------> freq_in_THz
+    '''
+    
+    freq = np.array(freq)
+    
+
+    if a != 0:
+        return ( freq * 3 / a * (10**2))
+    else:
+        return ( freq * 3 * 10**2)
+    
+def index_to_param(param, index):

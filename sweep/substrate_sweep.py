@@ -8,11 +8,19 @@ from math import sqrt, pi
 
 from sweep_util import *
 
+'''
+---------------- FORMAT -------------------------------------------------------
+The h5py file created from this script contains two datasets : 
+(1) dset_gamma --> stores the mirror strength for parameters [w, a, hy, hx]
+(2) dset_freq  --> stores the bandedge frequencies for parameters [w, a, hy, hx]
+-------------------------------------------------------------------------------
+'''
 
-data_file = "no_sub190.hdf5"      # Name of the file where the data will be stored
+data_file = "no_sub190.hdf5"             # Name of the file where the data will be stored
 param_file = "no_sub_param_190.txt"      # Name of the file where the parameters of interest will be stored     
 SUBSTRATE = False
 wvg_height = 0.22
+
 #-----------------DEFAULTS-----------------------#
 #     del_a = 0.001      
 #     del_hy = 0.025
@@ -54,7 +62,7 @@ with h5py.File(data_file, 'w') as f:
     dt = h5py.special_dtype(vlen=np.float32)
     gamma_max = 0        # arbitrary small value
     mirror_strength = []   
-
+    
     j = len(np.arange(w_min, w_max , del_w))
     k = len(np.arange(a_min , a_max, del_a))
     l = len(np.arange(hy_min, hy_max , del_hy))
