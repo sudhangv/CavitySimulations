@@ -7,6 +7,9 @@ from .lattice import OneDLattice
 from .waveguide import *
 from ..utilities.utilities import *
 
+del_w, del_a, del_hy, del_hx = 0.05, 0.001, 0.025, 0.025
+w_max ,a_max = 0.7, 0.45
+w_min, a_min, hy_min, hx_min = 0.65, 0.25, 0.1, 0.05
 
 def get_perturb_param(to_perturb, freq_data, gamma_data, w,  a,   hy,  hx , 
                       target_f_Thz, f_perturb_lower_Thz, f_perturb_upper_Thz, tol_Thz = 1):
@@ -108,7 +111,61 @@ def get_perturb_param(to_perturb, freq_data, gamma_data, w,  a,   hy,  hx ,
             
     return lower_param, upper_param
 
-
+def get_mirror_param(to_perturb, freq_data, gamma_data, w,  a_mirror,   hy,  hx , 
+                      target_f_Thz, f_perturb_lower_Thz, f_perturb_upper_Thz, steps = 20):
+    '''
+    This function takes the new central segment parameters (hx, hy, a_mirror ,w ) and 
+    the new resonant frequencies (f_perturb_lower_Thz,f_perturb_upper_Thz) and returns
+    the parameters for the mirror segment that maximize the mirror strength
+    
+    steps: (a_mirror +- steps * del_a) specify the range within which the new maxima for gamma will be searched
+    '''
+    
+    index_w, index_a_mirror, index_hy, index_hx = get_index(w = w, a = a_mirror, hy = hy, hx = hx)
+    
+    if to_perturb == 'hx':
+        
+        freq_mirror = freq_data[index_w, index_a_mirror , index_hy, index_hx]
+        gamma_mirror = get_gamma(band_edge_f = freq_plus_Thz, check_freq = f_perturb_lower_Thz)
+        
+        gamma_max_upper = gamma_mirror # upper denotes that the quantity is relevant for the increased resonant frequency           
+        gamma_max_lower = gamma_mirror # lower denotes that the quantity is relevant for the decreased resonant frequency
+        
+        for i in range( steps + 1):
+            
+            # The plus(minus) here denote that the quantity refers to increasing(decreasing) a_mirror 
+            # upper and lower retain their meaning from the previous comments
+            
+            freq_plus_Thz = freq_data[index_w, index_a_mirror + i, index_hy, index_hx]  
+            freq_minus_Thz = freq_data[index_w, index_a_mirror - i, index_hy, index_hx]
+            
+            gamma_plus_lower = get_gamma(band_edge_f = freq_plus_Thz, check_freq = f_perturb_lower_Thz)
+            gamma_minus_lower = get_gamma(band_edge_f = freq_minus_Thz, check_freq = f_perturb_lower_Thz)
+            
+            gamma_plus_upper = get_gamma(band_edge_f = freq_plus_Thz, check_freq = f_perturb_upper_Thz)
+            gamma_minus_upper = get_gamma(band_edge_f = freq_minus_Thz, check_freq = f_perturb_upper_Thz)
+            
+            if gamma_plus_lower > gamma_max_lower:
+                gamma_max_lower = gamma_plus_lower
+                index_lower = i
+            
+            if gamma_minus_lower > gamma_max_lower:
+                gamma_max_lower = gamma_minus_lower
+                index_lower = i
+            
+            if gamma_plus_upper > gamma_max_upper:
+                gamma_max_upper = gamma_plus_upper
+                index_upper = i
+                
+            if gamma_minus_upper > gamma_max_upper:
+                gamma_max_upper = gamma_minus_upper
+                index_upper = i
+    
+        a_mirror_new_lower = a_mirror + index_lower * del_a
+        a_mirror_new_upper = a_mirror + index_upper * del_a
+        
+        return a_mirror_new_lower,a_mirror_new_upper
+        
 def _a_poly_tapering(geom=None, n_segments=20, material_holes=mp.vacuum):
     
     filename = "/bandstructure_data/<filename>"
@@ -158,8 +215,17 @@ def _a_poly_tapering(geom=None, n_segments=20, material_holes=mp.vacuum):
                                                  f_perturb_lower_Thz= f_perturb_lower_Thz, 
                                                  f_perturb_upper_Thz= f_perturb_upper_Thz, tol_Thz = tol_Thz)
     
-    #Here upper_param and lower_param correspond to the perturbed parameters that result in resonant 
-    #frequencies of f_perturb_upper_Thz and f_perturb_lower_Thz respectively 
+    a_mirror_new_lower,a_mirror_new_upper = get_mirror_param(to_perturb, freq_data, gamma_data, 
+                                                             w,  a_mirror,   hy,  hx , 
+                                                             target_f_Thz, f_perturb_lower_Thz, 
+                                                             f_perturb_upper_Thz, steps = 20)
+    
+    # Here upper_param and lower_param correspond to the perturbed parameters that result in resonant 
+    
+    # frequencies of f_perturb_upper_Thz and f_perturb_lower_Thz respectively 
+    
+    # a_mirror_new_lower,a_mirror_new_upper refer to the new values of a_mirror that maximise gamma_mirror for
+    # the the two ends of the perturbation window
     
     #----------------------------------------------------------------------------------------------------#
     
@@ -189,6 +255,7 @@ def _a_pow_tapering(geom=None, n_segments=20, material_holes=mp.vacuum):
   
     if geom is None:
         geom = []
+        
     material_holes = index_to_material(material_holes)
     hx = 0.143
     hy = 0.315                                                                                                              
@@ -208,10 +275,11 @@ def _a_pow_tapering(geom=None, n_segments=20, material_holes=mp.vacuum):
                                pow = 2)
     
     _cavity.apply_pow_spacing()
+    
     print("--------------------------------------------------------------------------------------------------------")
     print(" Pow Tapering : hx = {}, hy = {}, w = {}, h = {}, a_cen  = {},  a_mirror = {}, n_taper = {}, Lx = {}".format(hx, hy, w, h, a_cen, a_mirror, _n_taper, Lx))    
     print("--------------------------------------------------------------------------------------------------------") 
-#print(_cavity.coordinates)
+
     # cavity holes
     for x, y, z, hx, hy in _cavity.coordinates:
         # holes are completely filled with tuning material:
