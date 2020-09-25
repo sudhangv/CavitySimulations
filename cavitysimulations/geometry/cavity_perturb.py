@@ -16,11 +16,12 @@ def get_perturb_param(to_perturb, freq_data, gamma_data, w,  a,   hy,  hx ,
     
     '''
     Here upper_param and lower_param correspond to the perturbed parameters that result in resonant 
-    frequencies of f_perturb_upper_Thz and f_perturb_lower_Thz respectively '''
+    frequencies of f_perturb_upper_Thz and f_perturb_lower_Thz respectively 
+    '''
+
+    lower_param = -1             # flags to indicate whether a suitable parameter has been found
+    upper_param = -1             # flags to indicate whether a suitable parameter has been found
     
-    del_a, del_hy, del_hx = 0.001,0.025 ,0.025
-    lower_param = -1
-    upper_param = -1
     index_w, index_a, index_hy, index_hx = get_index(w = w, a = a, hy = hy, hx = hx)
     
     if to_perturb == 'hx':
@@ -33,17 +34,17 @@ def get_perturb_param(to_perturb, freq_data, gamma_data, w,  a,   hy,  hx ,
             #----------------- Checking by increasing the parameter to be inspected -----------------------#
             freq_to_check_Thz = data_freq[index_w, index_a, index_hy, index_hx + i][0] 
                                              
-            
             if freq_to_check_Thz < (f_perturb_upper_Thz + tol_Thz) and freq_to_check_Thz > (f_perturb_upper_Thz - tol_Thz):
-                upper_param = hx + (i * del_hx)
-            
+                upper_param = hx + (i * del_hx)               
+                # if the resonant frequency for the new parameter lies within a tolerance from the peturbed resonant freqeuncy
+                # we have found the desired perturbed parameter
+                                                            
             if freq_to_check_Thz < (f_perturb_lower_Thz + tol_Thz) and freq_to_check_Thz > (f_perturb_lower_Thz - tol_Thz):
                 lower_param = hx + (i * del_hx)
             
             #----------------- Checking by decreasing the parameter to be inspected -----------------------#
             freq_to_check_Thz = data_freq[index_w, index_a, index_hy, index_hx - i][0] 
                                                     
-            
             if freq_to_check_Thz < (f_perturb_upper_Thz + tol_Thz) and freq_to_check_Thz > (f_perturb_upper_Thz - tol_Thz):
                 upper_param = hx + (-i * del_hx)
             
@@ -126,10 +127,14 @@ def get_mirror_param(to_perturb, freq_data, gamma_data, w,  a_mirror,   hy,  hx 
     if to_perturb == 'hx':
         
         freq_mirror = freq_data[index_w, index_a_mirror , index_hy, index_hx]
-        gamma_mirror = get_gamma(band_edge_f = freq_plus_Thz, check_freq = f_perturb_lower_Thz)
+        gamma_mirror_upper = get_gamma_from_Thz(band_edge_f = freq_mirror, check_freq = f_perturb_upper_Thz)
+        gamma_mirror_lower = get_gamma_from_Thz(band_edge_f = freq_mirror, check_freq = f_perturb_lower_Thz)
         
-        gamma_max_upper = gamma_mirror # upper denotes that the quantity is relevant for the increased resonant frequency           
-        gamma_max_lower = gamma_mirror # lower denotes that the quantity is relevant for the decreased resonant frequency
+        # gamma_mirror_upper(lower) denote gamma for the mirror segment at the upper(lower) ends of the resonant 
+        # frequency perturbation
+        
+        gamma_max_upper = gamma_mirror_upper # upper denotes that the quantity is relevant for the increased resonant frequency           
+        gamma_max_lower = gamma_mirror_lower # lower denotes that the quantity is relevant for the decreased resonant frequency
         
         for i in range( steps + 1):
             
@@ -139,19 +144,19 @@ def get_mirror_param(to_perturb, freq_data, gamma_data, w,  a_mirror,   hy,  hx 
             freq_plus_Thz = freq_data[index_w, index_a_mirror + i, index_hy, index_hx]  
             freq_minus_Thz = freq_data[index_w, index_a_mirror - i, index_hy, index_hx]
             
-            gamma_plus_lower = get_gamma(band_edge_f = freq_plus_Thz, check_freq = f_perturb_lower_Thz)
-            gamma_minus_lower = get_gamma(band_edge_f = freq_minus_Thz, check_freq = f_perturb_lower_Thz)
+            gamma_plus_lower = get_gamma_from_Thz(band_edge_f = freq_plus_Thz, check_freq = f_perturb_lower_Thz)
+            gamma_minus_lower = get_gamma_from_Thz(band_edge_f = freq_minus_Thz, check_freq = f_perturb_lower_Thz)
             
-            gamma_plus_upper = get_gamma(band_edge_f = freq_plus_Thz, check_freq = f_perturb_upper_Thz)
-            gamma_minus_upper = get_gamma(band_edge_f = freq_minus_Thz, check_freq = f_perturb_upper_Thz)
+            gamma_plus_upper = get_gamma_from_Thz(band_edge_f = freq_plus_Thz, check_freq = f_perturb_upper_Thz)
+            gamma_minus_upper = get_gamma_from_Thz(band_edge_f = freq_minus_Thz, check_freq = f_perturb_upper_Thz)
             
             if gamma_plus_lower > gamma_max_lower:
                 gamma_max_lower = gamma_plus_lower
-                index_lower = i
+                index_lower = i                # index relative to the orignal a_mirror
             
             if gamma_minus_lower > gamma_max_lower:
                 gamma_max_lower = gamma_minus_lower
-                index_lower = i
+                index_lower = -i 
             
             if gamma_plus_upper > gamma_max_upper:
                 gamma_max_upper = gamma_plus_upper
@@ -159,12 +164,12 @@ def get_mirror_param(to_perturb, freq_data, gamma_data, w,  a_mirror,   hy,  hx 
                 
             if gamma_minus_upper > gamma_max_upper:
                 gamma_max_upper = gamma_minus_upper
-                index_upper = i
+                index_upper = -i
     
         a_mirror_new_lower = a_mirror + index_lower * del_a
         a_mirror_new_upper = a_mirror + index_upper * del_a
         
-        return a_mirror_new_lower,a_mirror_new_upper
+        return a_mirror_new_lower, a_mirror_new_upper
         
 def _a_poly_tapering(geom=None, n_segments=20, material_holes=mp.vacuum):
     
@@ -195,7 +200,7 @@ def _a_poly_tapering(geom=None, n_segments=20, material_holes=mp.vacuum):
     # ------------------------------ PERTURBATION HERE -------------------------------------------- #
     
     to_perturb = "hx"            # one of hx, hy and a
-    perturb_range = 0.04         # edges of the wavelength window will be (target_lambda +- perturb_range) 
+    perturb_range = 0.04         # edges of the wavelength (in um) window will be (target_lambda +- perturb_range) 
     tol_Thz = 1                  # tolerance in Thz to select the perturbed segment parameters
     
     target_wvl = 1.54            # vaccum wavelength ( in um ) of the unperturbed cavity design
@@ -210,7 +215,7 @@ def _a_poly_tapering(geom=None, n_segments=20, material_holes=mp.vacuum):
     
     lower_param, upper_param = get_perturb_param(to_perturb = to_perturb , 
                                                  freq_data=  freq_data , gamma_data= gamma_data,
-                                                 w = w,  a = a,   hy = hy,  hx = hx , 
+                                                 w = w,  a = a_cen,   hy = hy,  hx = hx , 
                                                  target_f_Thz= target_f_Thz, 
                                                  f_perturb_lower_Thz= f_perturb_lower_Thz, 
                                                  f_perturb_upper_Thz= f_perturb_upper_Thz, tol_Thz = tol_Thz)

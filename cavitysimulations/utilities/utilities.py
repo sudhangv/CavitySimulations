@@ -76,3 +76,19 @@ def convert_freq_to_Thz(freq, a = 0):
         return ( freq * 3 * 10**2)
     
 def index_to_param(param, index):
+    
+    
+def get_gamma_from_Thz(band_edge_f, check_freq):
+    
+    if (check_freq < band_edge_f[1])  and (check_freq > band_edge_f[0]):
+        
+        f_mid = (band_edge_f[0] + band_edge_f[1])/2            
+        diff = band_edge_f[0] - band_edge_f[1]
+        delta = 1 - (check_freq/ f_mid)
+
+        gamma = math.sqrt(abs(( 0.5 * diff/ f_mid ) ** 2 - delta**2 ))
+    
+    else:
+        gamma = 0
+        
+    return gamma
