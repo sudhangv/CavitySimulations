@@ -16,10 +16,10 @@ The h5py file created from this script contains two datasets :
 -------------------------------------------------------------------------------
 '''
 
-data_file = "test.hdf5"             # Name of the file where the data will be stored
-param_file = "test.txt"      # Name of the file where the parameters of interest will be stored     
+data_file = "sub_190_yO.hdf5"             # Name of the file where the data will be stored
+param_file = "sub_190_yO_param.txt"      # Name of the file where the parameters of interest will be stored     
 SUBSTRATE = True
-wvg_height = 0.22
+wvg_height = 0.19
 mode = "yO"
 
 #-----------------DEFAULTS-----------------------#
@@ -30,10 +30,10 @@ mode = "yO"
 #------------------------------------------------#
 
 #--------------- Increments --------------------#
-del_a = 0.05
-del_hy = 0.1
-del_hx = 0.1
-del_w = 0.1
+del_a = 0.001
+del_hy = 0.025
+del_hx = 0.025
+del_w = 0.05
 
 #------------------ Ranges ---------------------#
 a_min = 0.25
