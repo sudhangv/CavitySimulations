@@ -16,10 +16,11 @@ The h5py file created from this script contains two datasets :
 -------------------------------------------------------------------------------
 '''
 
-data_file = "no_sub190.hdf5"             # Name of the file where the data will be stored
-param_file = "no_sub_param_190.txt"      # Name of the file where the parameters of interest will be stored     
-SUBSTRATE = False
+data_file = "test.hdf5"             # Name of the file where the data will be stored
+param_file = "test.txt"      # Name of the file where the parameters of interest will be stored     
+SUBSTRATE = True
 wvg_height = 0.22
+mode = "yO"
 
 #-----------------DEFAULTS-----------------------#
 #     del_a = 0.001      
@@ -29,10 +30,10 @@ wvg_height = 0.22
 #------------------------------------------------#
 
 #--------------- Increments --------------------#
-del_a = 0.001
-del_hy = 0.025
-del_hx = 0.025
-del_w = 0.05
+del_a = 0.05
+del_hy = 0.1
+del_hx = 0.1
+del_w = 0.1
 
 #------------------ Ranges ---------------------#
 a_min = 0.25
@@ -69,6 +70,10 @@ with h5py.File(data_file, 'w') as f:
     m = len(np.arange(hx_min, hx_max, del_hx ))
 
     dset_gamma = f.create_dataset("gamma", (j,k,l,m))
+    dset_gamma.attrs['wvg_height'] = wvg_height
+    dset_gamma.attrs['substrate'] = SUBSTRATE
+    dset_gamma.attrs["mode"] = "yO"
+    
     dset_gamma[:,:,:,:] =  np.zeros((j,k,l,m))
 
     dset_freq = f.create_dataset("freq", (j,k,l,m), dtype=dt)
@@ -87,7 +92,10 @@ with h5py.File(data_file, 'w') as f:
 
         #w = round(w,3)
 
-        freq1_Thz = convert_freq_to_Thz(get_freqs(hx_min, hy_min, a_max, w, wvg_height, substrate = SUBSTRATE), a_max)  # getting lowest possible frequencies for width w 
+        freq1_Thz = convert_freq_to_Thz(get_freqs(hx_min, hy_min, a_max, w, wvg_height, 
+                                                  substrate = SUBSTRATE, mode = mode), 
+                                        a_max)  # getting lowest possible frequencies for width w 
+        
         print(" -------------------- w: {} loop ----------------------".format(w))
         if ((freq1_Thz[0]  > f_target_Thz)):
 
@@ -102,7 +110,9 @@ with h5py.File(data_file, 'w') as f:
                 print("------------------------a: {} loop-------------------------".format(a))
                 #a = round(a,3)
 
-                freq2_Thz = convert_freq_to_Thz(get_freqs(hx_min, hy_min, a, w, wvg_height,substrate = SUBSTRATE), a)  # getting lowest possible frequences for (w,a)
+                freq2_Thz = convert_freq_to_Thz(get_freqs(hx_min, hy_min, a, w, wvg_height,
+                                                          substrate = SUBSTRATE,mode = mode), 
+                                                a)  # getting lowest possible frequences for (w,a)
 
                 if ( freq2_Thz[0] > f_target_Thz):
                     continue
@@ -115,7 +125,9 @@ with h5py.File(data_file, 'w') as f:
                     print("-----------------------hy {} loop----------------------".format(hy))
                     #hy = round(hy,3)
 
-                    freq3_Thz = convert_freq_to_Thz(get_freqs(hx_min, hy, a, w, wvg_height, substrate = SUBSTRATE), a)  # getting lowest possible frequences for (w,a, hy)
+                    freq3_Thz = convert_freq_to_Thz(get_freqs(hx_min, hy, a, w, wvg_height, 
+                                                              substrate = SUBSTRATE, mode = mode)
+                                                    , a)  # getting lowest possible frequences for (w,a, hy)
 
                     if ( (freq3_Thz[0]  > f_target_Thz) ):
                         continue
@@ -132,7 +144,9 @@ with h5py.File(data_file, 'w') as f:
     #                         hx = round(hx,3)
     #                         w = round(w,3)
 
-                        freq4_Thz = convert_freq_to_Thz(get_freqs(hx, hy, a, w, wvg_height, substrate = SUBSTRATE), a )
+                        freq4_Thz = convert_freq_to_Thz(get_freqs(hx, hy, a, w, wvg_height, 
+                                                                  substrate = SUBSTRATE, mode = mode)
+                                                        , a )
 
                         if ( freq4_Thz[0] > f_target_Thz):  # if w_target is outside the bandgap for 2 consecutive runs, break outside the loop
                             count = count + 1
@@ -180,6 +194,8 @@ with h5py.File(data_file, 'w') as f:
                                 continue
 
     with open(param_file, "w") as file1: 
+        file1.write("wvg_height = {} , mode = {}, SUBSRATE = {}".format(wvg_height, mode, SUBSTRATE))
+        file1.write("\n")
         for parameter in parameters:
     # Writing data to a file 
             file1.write("hx = {}, hy = {}, a = {}, w = {}, freqs = {}, gamma = {}".format(*parameter)) 

@@ -28,7 +28,8 @@ w_max ,a_max = 0.7, 0.45
 w_min, a_min, hy_min, hx_min = 0.65, 0.25, 0.1, 0.05
 class OneDLattice():
     
-    p_data = "cavitysimulations/geometry/bandstructure_data/sweep_data.hdf5"
+    #p_data = "cavitysimulations/geometry/bandstructure_data/sweep_data.hdf5"
+    p_data = "bandstructure_data/sweep_data.hdf5"
 
 
     def __init__(self, Lx, filename = p_data):
@@ -399,7 +400,7 @@ class OneDLattice():
         Loads data from hdf5 file
         '''
         hf = h5py.File(filename, 'r')
-        data = np.array( hf.get("data"))
+        data = np.array( hf.get("gamma"))
         self.data = data
         hf.close()
         
