@@ -1,3 +1,4 @@
+
 import meep as mp
 import argparse
 import math
@@ -22,7 +23,8 @@ CONTENTS:
 (9)get_excitation_mode_from_string
 (10)get_boundary_layer
 (11)index_to_material
-
+(12)get_value_from_index(index, param = 'a')
+(13)get_gamma_general(freq, a, f_target = 1 / (1.54) * 1.01)
 '''
 def convert_freq_to_Thz(freq, a = 0):
     freq = np.array(freq)
@@ -55,7 +57,7 @@ def get_gamma_from_Thz(band_edge_f, check_freq):
     return gamma               
 
 
-def get_freqs(hx , hy , a , w , h = 0.22, substrate = False, output_epsilon = False ,mode = "zEyO"):
+def get_freqs(hx , hy , a , w , h = 0.22, substrate = False, output_epsilon = False ,mode = "zEyO", num_bands = 2):
     
     # h = 0.23    # for manually setting waveguide height 
     res = 20
@@ -96,7 +98,7 @@ def get_freqs(hx , hy , a , w , h = 0.22, substrate = False, output_epsilon = Fa
 
     k_points = [mp.Vector3(0.5, 0, 0)]
     
-    num_bands = 2 # from simpetus example
+    num_bands = num_bands 
 
     ms = mpb.ModeSolver(geometry_lattice=geometry_lattice,
                         geometry=geometry,
@@ -115,6 +117,10 @@ def get_freqs(hx , hy , a , w , h = 0.22, substrate = False, output_epsilon = Fa
     if mode == "yO":
         
         ms.run_yodd()
+        
+    if mode == "yE":
+        
+        ms.run_yeven()
         
 #     if output_epsilon:
 #         visualise_geometry(ms = ms, x = None , y = None, z = (4 * res)/ 2, value = None)
@@ -367,3 +373,57 @@ def index_to_material(element):
         return element
     else:
         return mp.Medium(index=element)
+
+def get_value_from_index(index, param = 'a'):
+    del_a = 0.001
+    del_hy = 0.025
+    del_hx = 0.025 
+    del_w = 0.05
+    
+    a_min = 0.25
+    a_max = 0.45        # upper limit of the sweep of a 
+
+    w_min = 0.65         #  lower limit of w 
+    w_max = 0.75        #  upper limit of w 
+
+    hx_min = 0.05        # lower limit of the sweep of a
+    hy_min = 0.1        #  lower limit of hy 
+    
+    if param == 'a':
+        return (a_min + del_a * index)
+    if param == 'hy':
+        return (hy_min + del_hy * index)
+    if param == 'hx':
+        return (hx_min + del_hx * index)
+    if param == 'w':
+        return (w_min + del_w * index)
+ 
+def get_gamma_general(freq, a, f_target = 1 / (1.54) * 1.01):
+    '''
+    f_target is in terms of 1/lambda * 1.01
+    freq is in terms of 2pi * c/ a
+    
+    RETURNS: 
+    
+    The mirror strength for the input tuple (freq) of the dielectric and air band edge frequencies with
+    f_target
+    '''
+    import math 
+    
+    freq[0] = convert_freq_to_Thz(freq[0], a)
+    freq[1] = convert_freq_to_Thz(freq[1], a)
+    f_target = convert_freq_to_Thz(1/1.54)* 1.01
+     
+
+
+    if f_target < freq[0] or f_target > freq[1] :  # if f_target outside bandgap
+        return 0
+    
+    w_mid = (freq[0] + freq[1])/2            
+    diff = freq[0] - freq[1]
+
+    delta = 1 - (w_target/ (w_mid))
+
+    gamma =  math.sqrt((( 0.5 * diff/ w_mid ) ** 2 - delta**2 ))
+    
+    return gamma

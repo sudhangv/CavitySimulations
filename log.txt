@@ -115,3 +115,6 @@ Oct 4
 ------
 @ag
 pushed Oct 1 simualtions files and updated log ( also pushed ) from @ag
+
+@ag
+added perturb_sweep.py and ran sweep for 190nm, yO, substrate
