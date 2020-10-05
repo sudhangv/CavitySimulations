@@ -118,3 +118,10 @@ pushed Oct 1 simualtions files and updated log ( also pushed ) from @ag
 
 @ag
 added perturb_sweep.py and ran sweep for 190nm, yO, substrate
+
+Oct 5
+------
+@quintsim2
+recloned github repo, added no_sub_190 and friends
+ran simulation for sub190yO @quintsim2, queued task 26 , from /gitlab_repository/cavitysimulations/SV_code
+
