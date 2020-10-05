@@ -1,0 +1,116 @@
+27th August
+id - 19  --- After nice result from 0.295 by setting source component = mp.Ey, changing it to 0.303
+
+Added poly_tapering, changed f = 1/1536 --> 1/1.54
+
+changed a_taperred --> a_poly_tapered
+
+id - 21
+
+Ran OG polynomial tapering witg a_cen = 0.349, a_end = 0.4, hx = hy = 0.25
+
+id - 23  POLY
+
+Changed wavg h to 0.22 and wvg w to 0.7,  hx = 0.25, hy = 0.4, w = 0.7, a_cen = 0.354, a_mirror = 0.4
+
+id 27  POLY
+
+same as id 23, just changed n_segments = 20
+
+id 28
+
+hx = 0.3, hy = 0.5, a = 0.449, w = 0.7, gamma = 0.1697
+
+id 31  POLY
+
+Same as ID 28, resolution : 30 ---> 40
+
+id 32
+
+Same as id 31, n_taper ---> 5, n_segment -----> 10
+
+id 34
+
+same as id 28, n_aper = Lx ----> 20
+
+id 35
+
+_n_taper = 10                                                                                                           _
+cavity.polynomial_elliptical_hole_taper(_n_taper, 0.3, 0.425, 0.65, 0.39, 0.449 )
+
+wvg w = 0.65
+
+id 36?
+------
+
+ _cavity.pow_degree_a_taper(_n_taper,
+                               hx = 0.143,
+                               hy = 0.315,
+                               w = 0.65,
+                               a_center = 0.316,
+                               a_mirror = 0.361,
+                               pow = 2)
+id 37
+------
+
+Same as id36? but with polynomial tapering
+
+id 39/0
+-------
+
+_cavity.pow_degree_a_taper(_n_taper,                                                                                                                  
+			    hx = 0.143,
+                               hy = 0.315,
+                               w = 0.65,
+                               a_center = 0.303,                                                                                                       
+                               a_mirror = 0.346,
+                               pow = 2)  
+
+id 40/1
+-------
+
+same as 39/0
+
+Sept 3
+------
+
+Re ran the two sweeps for wz = 190 and 200 ( ag and quint sim respectively )
+will update log from one computer at a time. Current = quint sim 
+
+Sept 8
+------
+
+Ran the sweeps for wz = 200 on ag, updated log on ag
+
+Sept 14
+-------- 
+@quintsim
+Updated data with wz 230 nm, pulled code to quint sim 
+
+@quitnsim
+Ran substrate simulation  wz = 220 nm@ag, pushed sweep_util
+
+@quintsim
+Ran substrate simulation wz = 190 nm@quinstim
+
+Sept 23
+-------
+@quintsim 
+Pushed results from @ag for wz = 220 nm substrate simulation and substrate simulation wz = 190
+
+Sept 24
+--------
+@ag
+Started wz = 190 nm no_sub sim @ag, pushed new substrate_sweep.py and log 
+
+@quintsim2
+Started wz = 220 nm no_sub sim @quintsim, pushed new substrate_sweep.py and log
+
+Oct 1
+-------
+@ag
+started wz = 190 nm, sub yO sim @ ag, pushed new substr
+ate_sweep.py and sweep_util.py
+Oct 4
+------
+finished Oct 1 sweep, pushed log and that sweep's files
