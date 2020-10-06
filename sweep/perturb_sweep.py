@@ -158,7 +158,7 @@ with h5py.File(data_file, 'w') as f:
 
                 
                 #if ( freq2_Thz[0] > f_target_Thz):
-                if (freq2_Thz[0] > f_perturb_lower_Thz):
+                if (freq2_Thz[0] > f_perturb_upper_Thz):
                     continue
 
                 #---------------------------#
@@ -224,7 +224,7 @@ with h5py.File(data_file, 'w') as f:
                                        int((hx - hx_min) / del_hx + 0.1)] = freq4_Thz[1]
             
                         #if ( freq4_Thz[0] > f_target_Thz):                   
-                        if ( freq2_Thz[0] > f_perturb_upper_Thz):
+                        if ( freq4_Thz[0] > f_perturb_upper_Thz):
                             
                             count = count + 1  # if w_target is outside the bandgap for 2 consecutive runs, break outside the loop
                             if count == 3 :    
@@ -274,8 +274,8 @@ with h5py.File(data_file, 'w') as f:
                                                         round(a,  4), 
                                                         round(w,  4), 
                                                         round(gamma_max,5),
-                                                        round(freq4_Thz[0]),
-                                                        round(freq4_Thz[1]))
+                                                        round(freq4_Thz[0], 4),
+                                                        round(freq4_Thz[1], 4))
                                                       )
 
 
