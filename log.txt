@@ -125,3 +125,10 @@ Oct 5
 recloned github repo, added no_sub_190 and friends
 ran simulation for sub190yO @quintsim2, queued task 26 , from /gitlab_repository/cavitysimulations/SV_code
 
+Using E.y source, I didn't get any mode ( I also changed the symmetry to be non-existent in the z direction)
+
+Oct 6
+-------
+
+Using H.z source, I got no modes
+
