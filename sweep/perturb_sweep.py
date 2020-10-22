@@ -16,13 +16,13 @@ The h5py file created from this script contains two datasets :
 -------------------------------------------------------------------------------
 '''
 
-data_file = "sub_perturb_yO_250.hdf5"             # Name of the file where the data will be stored
-param_file = "sub_perturb_yO_250_param.txt" 
+data_file = "sub_perturb_yO_230.hdf5"             # Name of the file where the data will be stored
+param_file = "sub_perturb_yO_230_param.txt" 
 
 
 # Name of the file where the parameters of interest will be stored     
 SUBSTRATE = True
-wvg_height = 0.25
+wvg_height = 0.23
 mode = "yO"
 
 #-----------------DEFAULTS-----------------------#

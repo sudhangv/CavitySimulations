@@ -343,13 +343,15 @@ class OneDLattice():
         a_arr = polynomial(gamma_arr)
         a_arr[0] = a_center
         a_arr.sort()
+        
         #breakpoint()
+        
         self.poly_spacing = np.append(a_arr, np.zeros(N_mirror))
             
         for i in range(N_mirror):
             self.poly_spacing[N_taper+i] = a_mirror
         
-        self.poly_spacing[0] = a_center
+        #self.poly_spacing[0] = a_center
         
         return self.poly_spacing
     
@@ -437,6 +439,7 @@ def polynomial_fit(data, w, hy, hx, gamma_mirror, degree = 10, a_mirror = 0.347 
     
     gamma_interest = gamma_NZ[ : np.where( (gamma_NZ == gamma_mirror))[0][0]]
     a_interest = a_list[ np.where(gamma_arr > 0)][ : len(gamma_interest) ]
+    
     #breakpoint()
     p_coeff = np.polyfit(gamma_interest, a_interest, degree)       # degress of freedom for the polynomial
     
