@@ -24,7 +24,8 @@ CONTENTS:
 (10)get_boundary_layer
 (11)index_to_material
 (12)get_value_from_index(index, param = 'a')
-(13)get_gamma_general(freq, a, f_target = 1 / (1.54) * 1.01)
+(13)get_gamma(freq, a, f_target = 1 / (1.54) * 1.01)
+
 '''
 
 def convert_freq_to_Thz(freq, a = 0):
@@ -411,6 +412,8 @@ def get_gamma(freq, a, f_target = 1 / (1.54) * 1.01):
     f_target
     '''
     import math 
+    
+    
     
     freq[0] = convert_freq_to_Thz(freq[0], a)
     freq[1] = convert_freq_to_Thz(freq[1], a)
