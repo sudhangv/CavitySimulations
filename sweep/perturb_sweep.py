@@ -16,13 +16,13 @@ The h5py file created from this script contains two datasets :
 -------------------------------------------------------------------------------
 '''
 
-data_file = "perturb_sub_yO_200.hdf5"             # Name of the file where the data will be stored
-param_file = "perturb_sub_yO_200_param.txt" 
+data_file = "perturb_sub_yO_150.hdf5"             # Name of the file where the data will be stored
+param_file = "perturb_sub_yO_150_param.txt" 
 
 
 # Name of the file where the parameters of interest will be stored     
 SUBSTRATE = True
-wvg_height = 0.20
+wvg_height = 0.15
 mode = "yO"
 
 #-----------------DEFAULTS-----------------------#
@@ -45,8 +45,8 @@ a_max = 0.45        # upper limit of the sweep of a
 w_min = 0.65         #  lower limit of w 
 w_max = 0.70        #  upper limit of w 
 
-hx_min = 0.125        # lower limit of the sweep of a
-hy_min = 0.200        #  lower limit of hy 
+hx_min = 0.100        # lower limit of the sweep of a
+hy_min = 0.150        #  lower limit of hy 
 
 hx_max = a_max - 0.07
 hy_max = w_max - 0.1  
