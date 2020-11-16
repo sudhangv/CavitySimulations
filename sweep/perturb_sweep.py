@@ -83,9 +83,19 @@ with h5py.File(data_file, 'w') as f:
     #breakpoint()
     
     dset_gamma = f.create_dataset("gamma", (j,k,l,m))
+    
     dset_gamma.attrs['wvg_height'] = wvg_height
     dset_gamma.attrs['substrate'] = SUBSTRATE
     dset_gamma.attrs["mode"] = "yO"
+    dset_gamma.attrs['hx_min'] = hx_min
+    dset_gamma.attrs['hy_min'] = hy_min
+    dset_gamma.attrs["w_min"] = w_min
+    dset_gamma.attrs["a_min"] = a_min
+    dset_gamma.attrs["del_hx"] =del_hx
+    dset_gamma.attrs["del_hy"] =del_hy
+    dset_gamma.attrs["del_w"] = del_w
+    dset_gamma.attrs["del_a"] = del_a
+    dset_gamma.attrs["perturb_range"] = perturb_range
     
     dset_gamma[:,:,:,:] =  np.zeros((j,k,l,m))
 
