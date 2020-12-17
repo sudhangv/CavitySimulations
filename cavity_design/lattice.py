@@ -23,6 +23,7 @@ import meep as mp
 del_w, del_a, del_hy, del_hx = 0.05, 0.001, 0.025, 0.025   
 w_max ,a_max = 0.7, 0.45
 w_min, a_min, hy_min, hx_min = 0.65, 0.25, 0.1, 0.05
+delta = 0.000001
 class OneDLattice():
     
     
@@ -32,17 +33,18 @@ class OneDLattice():
         The first 3 entries are the x,y,z coordinate.
         The last 2 represent hx and hy.
         """
-    # -------------------CHANGE CHANGE CHANGE----------------------------------
         
         self.coordinates = np.zeros((Lx, 5))
         self.filename = filename
         self.Lx = Lx
+        
         for i in range(Lx):
             self.coordinates[i, 0] = i
             self.coordinates[i, 3] = 1
             self.coordinates[i, 4] = 1
+            
         if self.filename != None:
-            self.data = self.load_data(self.filename)
+            self.load_data(self.filename)
 
     def set_y(self, y):
         """
@@ -307,7 +309,7 @@ class OneDLattice():
         
         a_center(gamma_center) : lattice constant ( gamma ) at the cavity segment
         a_mirror(gamma_mirror) : lattice constant ( gamma ) for non-tapered mirror segment
-        data                   : sweep data
+        X_data                 : sweep data
         polynomial             : curve thata fits gamma vs a data
         poly_coeff             : degrees of freedom for the polynomial, array = size (degree+1,)
         gamma_arr              : array of N_taper equispaced gammas between (and including) gamma_center and gamma_mirror
@@ -323,8 +325,8 @@ class OneDLattice():
         index_hy = int((hy - hy_min) / del_hy + 0.1)
         index_hx = int((hx - hx_min) / del_hx + 0.1)
         
-        gamma_center = self.data[index_w, index_a_center, index_hy, index_hx]
-        gamma_mirror = self.data[index_w, index_a_mirror, index_hy, index_hx]
+        gamma_center = self.gamma_data[index_w, index_a_center, index_hy, index_hx]
+        gamma_mirror = self.gamma_data[index_w, index_a_mirror, index_hy, index_hx]
         
         for i in range(self.Lx):
             self.modify_hx(i, hx)
@@ -333,18 +335,23 @@ class OneDLattice():
         N_taper = number_of_tapered_holes
         N_mirror = self.Lx - N_taper
         
-        data = self.data
+        gamma_data = self.gamma_data
         
         gamma_arr = np.linspace(gamma_center, gamma_mirror, N_taper) 
-    
-        poly_coeff = polynomial_fit(self.data, w , hy, hx , gamma_mirror, degree = 8 )
-        polynomial = np.poly1d(poly_coeff)
         
-        a_arr = polynomial(gamma_arr)
+        gamma_interest, a_interest = polynomial_fit(self.gamma_data, w , hy, hx , gamma_mirror )
+
+        
+        a_arr = np.interp(x = gamma_arr, xp = gamma_interest, fp = a_interest )
+        
+        breakpoint()
+#         poly_coeff = polynomial_fit(self.gamma_data, w , hy, hx , gamma_mirror, degree = 8)
+#         polynomial = np.poly1d(poly_coeff)
+#         a_arr = polynomial(gamma_arr)
+        
         a_arr[0] = a_center
         a_arr.sort()
         
-        #breakpoint()
         
         self.poly_spacing = np.append(a_arr, np.zeros(N_mirror))
             
@@ -389,20 +396,21 @@ class OneDLattice():
         
         return self.spacing
         
-    def load_data(self, filename = "sweep_data(1).hdf5"):    # CHANGE CHANGE CHANGE
+    def load_data(self, filename):    
         '''
         Loads data from hdf5 file
         '''
         hf = h5py.File(filename, 'r')
-        data = np.array( hf.get("gamma"))
-        self.data = data
-        hf.close()
         
-        x = np.where(data ==-1)
-        for i in range(len(x[0])):
-            data[x[0][i], x[1][i], x[2][i], x[3][i] ] = 0    # data cleaning 
+        self.gamma_data = np.array( hf.get("gamma"))
+        try:
+            self.freq_lower_data = np.array( hf.get("freq_lower"))
+            self.freq_upper_data = np.array( hf.get("freq_upper"))
+            
+        except Exception:
+            pass
         
-        return data
+        hf.close()   
     
     def get_index(self, w, a, hy, hx):
         
@@ -415,7 +423,7 @@ class OneDLattice():
     
  # -------------------CHANGE CHANGE CHANGE---------------------------------- #   
     
-def polynomial_fit(data, w, hy, hx, gamma_mirror, degree = 10, a_mirror = 0.347 ):            
+def polynomial_fit(gamma_data, w, hy, hx, gamma_mirror, degree = 10, a_mirror = 0.347 ):            
         
         
     '''
@@ -423,24 +431,28 @@ def polynomial_fit(data, w, hy, hx, gamma_mirror, degree = 10, a_mirror = 0.347 
     
     Fits a polynomial curve of mentioned degree to gamma vs lattice constant(a) data ( for fixed w, hy and hx)
     '''
-    
-
-
     index_a_mirror = int((a_mirror - a_min)/del_a + 0.1)
     index_w = int((w - w_min) / del_w + 0.1)
     index_hy = int((hy - hy_min) / del_hy + 0.1)
     index_hx = int((hx - hx_min) / del_hx + 0.1)
     
     
-    a_list = np.arange(a_min, a_max, del_a)                        # list of a
+    a_list = np.arange(a_min, a_max + delta, del_a)                        # list of a
         
-    gamma_arr = data[index_w, :, index_hy, index_hx]               # array of gamma for fixed w, hy and hx
-    gamma_NZ = gamma_arr[ gamma_arr > 0]
+    gamma_arr = gamma_data[index_w, :, index_hy, index_hx]               # array of gamma for fixed w, hy and hx
+#     gamma_NZ = gamma_arr[ gamma_arr > 0 ]
+    gamma_NZ = np.insert(gamma_arr[ gamma_arr > 0], 0, 0)
     
-    gamma_interest = gamma_NZ[ : np.where( (gamma_NZ == gamma_mirror))[0][0]]
-    a_interest = a_list[ np.where(gamma_arr > 0)][ : len(gamma_interest) ]
+#     gamma_interest = gamma_NZ[ : np.where( (gamma_NZ == gamma_mirror))[0][0]]
+#     a_interest = a_list[ np.where(gamma_arr > 0)][ : len(gamma_interest) ]
+
+    gamma_interest = gamma_NZ[ : (np.where( (gamma_NZ == gamma_mirror))[0][0] + 1)]
+    a_interest = a_list[ np.insert(np.where(gamma_arr > 0), 0, np.where(gamma_arr > 0)[0] - 1) ][ : len(gamma_interest) ]
     
-    #breakpoint()
-    p_coeff = np.polyfit(gamma_interest, a_interest, degree)       # degress of freedom for the polynomial
+    breakpoint()
     
-    return p_coeff
+    return gamma_interest, a_interest
+    
+    #p_coeff = np.polyfit(gamma_interest, a_interest, degree)       # degress of freedom for the polynomial
+    
+    #return p_coeff
